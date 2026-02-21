@@ -21,8 +21,30 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
 	alert('Form submitted!');
 });
 
-window.onscroll = function () {
-	if (window.scrollY > 500) {
-		document.getElementById('back-to-top').style.display = "block";
-	}
-};
+// Back-to-top: show after scrolling and smooth-scroll on click
+document.addEventListener('DOMContentLoaded', function () {
+    const backBtn = document.getElementById('back-to-top');
+    if (!backBtn) return;
+
+    function toggleBackToTop() {
+        const doc = document.documentElement;
+        // if page isn't scrollable, keep it hidden
+        if (doc.scrollHeight <= window.innerHeight) {
+            backBtn.classList.remove('show');
+            return;
+        }
+
+        const threshold = 20; // px from bottom
+        const atBottom = (window.innerHeight + window.scrollY) >= (doc.scrollHeight - threshold);
+        backBtn.classList.toggle('show', atBottom);
+    }
+
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    // initialize state in case page is already scrolled
+    toggleBackToTop();
+
+    backBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});

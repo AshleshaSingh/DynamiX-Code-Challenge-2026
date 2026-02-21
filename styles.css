@@ -111,6 +111,9 @@ header {
 		margin-top: 1rem;
 	}
 }
+.form-section{
+	text-align: center;
+}
 
 .section-title {
 	margin-block: 0;
@@ -138,7 +141,6 @@ header {
 }
 
 .header-wrapper {
-	text-align: center;
 	max-width: 700px;
 	margin: 0 auto 40px;
 }
@@ -163,7 +165,7 @@ header {
 }
   
 .form-field input {
-	width: 100%;
+	width: 85%;
 	padding: 14px 20px;
 	border-radius: 50px;
 	border: 1px solid #323848;
@@ -227,6 +229,7 @@ footer {
 	background: #222;
 	color: #333;
 	text-align: center;
+	color: var(--white-hex);
 }
 
 section {
@@ -294,4 +297,61 @@ section {
 		font-size: 24px;
 		text-align: center;
 	}
+	.section-title {
+		font-size: 1.75em;
+	}
+	.form-section{
+		text-align: left;
+	}
+	.form-submit{
+		margin: 0;
+	}
+}
+
+/* Back to top button styles */
+#back-to-top {
+    position: fixed;
+    right: 3em;
+    left: auto;
+    bottom: 4.2em;
+    display: none;
+    width: 50px;
+    height: 50px;
+    background: #f79233;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    z-index: 1000;
+    transition: opacity 200ms ease, transform 200ms ease;
+    opacity: 0;
+    transform: translateY(10px);
+    text-decoration: none;
+}
+
+#back-to-top img {
+  width: 16px;
+  height: 21px;
+  display: block;
+  filter: invert(1);
+}
+
+#back-to-top.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 700px) {
+    /* Center the button horizontally and place it above the footer on small screens */
+    #back-to-top {
+        right: auto;
+        left: 50%;
+        bottom: 4.2em;;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    #back-to-top.show {
+        transform: translateX(-50%) translateY(0);
+    }
 }
