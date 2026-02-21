@@ -20,14 +20,27 @@ document.addEventListener('DOMContentLoaded', function () {
 	menuBtn.addEventListener("click", toggleMenu);
 });
 
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-	event.preventDefault();
-	alert('Form submitted!');
-});
+// Form validation
+const form = document.getElementById('contact-form');
+
+if (form) {
+	form.addEventListener('submit', function (event) {
+
+		if (!form.checkValidity()) {
+			event.preventDefault();
+			form.reportValidity();
+			return;
+		}
+
+		event.preventDefault();
+		alert('Form submitted!');
+		form.reset();
+	});
+}
 
 // Back-to-top: show after scrolling and smooth-scroll on click
+const backBtn = document.getElementById('back-to-top');
 document.addEventListener('DOMContentLoaded', function () {
-    const backBtn = document.getElementById('back-to-top');
     if (!backBtn) return;
 
     function toggleBackToTop() {
@@ -38,9 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const threshold = 20; // px from bottom
-        const atBottom = (window.innerHeight + window.scrollY) >= (doc.scrollHeight - threshold);
-        backBtn.classList.toggle('show', atBottom);
+        //show when user has scrolled down a liitle from the top
+		const scrolled = window.scrollY || window.pageYOffset;
+		const showAfter = 50; //px from top
+		backBtn.classList.toggle('show', scrolled > showAfter);
     }
 
     window.addEventListener('scroll', toggleBackToTop, { passive: true });
