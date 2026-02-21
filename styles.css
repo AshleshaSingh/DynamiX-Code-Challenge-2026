@@ -137,6 +137,75 @@ header {
 	border-radius: 24px;
 }
 
+.header-wrapper {
+	text-align: center;
+	max-width: 700px;
+	margin: 0 auto 40px;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+#contact-form {
+	max-width: 600px;
+	margin: 40px auto 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+  
+.form-field input {
+	width: 100%;
+	padding: 14px 20px;
+	border-radius: 50px;
+	border: 1px solid #323848;
+	background: #3238480D;
+	font-size: 16px;
+	outline: none;
+	transition: border 200ms ease, box-shadow 200ms ease;
+}
+  
+.form-field input::placeholder {
+	color: #323848;
+}
+  
+.form-field input:focus {
+	border-color: var(--orange-hex);
+	box-shadow: 0 0 0 3px rgba(247, 146, 51, 0.2);
+}
+
+.form-submit {
+	align-self: center;
+	padding: 12px 20px;
+	border-radius: 50px;
+	border: 1px solid #323848;
+	background: var(--white-hex);
+	font-weight: 400px;
+	font-size: 16px;
+	cursor: pointer;
+	opacity: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 100px;
+	height: 40px;
+	margin: 0.5rem auto 0;
+
+  }
+
+.form-submit:hover {
+	background: var(--orange-hex);
+	color: var(--white-hex);
+}
+
 button {
 	padding: 10px;
 	font-size: 18px;
