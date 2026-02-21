@@ -19,7 +19,7 @@ header {
 	display: flex;
 	gap: 2em;
 	justify-content: space-between;
-	padding: 20px;
+	padding: 20px 40px;
 	border-radius: 0.5em;
 	background-color: var(--orange-hex);
 	box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.25);
@@ -113,6 +113,8 @@ header {
 }
 .form-section{
 	text-align: center;
+	padding-bottom: 4em;
+	padding-top:0;
 }
 
 .section-title {
@@ -226,8 +228,8 @@ ul {
 footer {
 	padding: 20px;
 	border-radius: 0.5em;
-	background: #222;
-	color: #333;
+	background: var(--dark-gray-hex);
+	color: var(--white-hex);
 	text-align: center;
 	color: var(--white-hex);
 }
@@ -286,6 +288,7 @@ section {
 
 	.navigation.visible {
 		transform: translate(0, 0);
+		margin-top: 10px;
 	}
 	.navigation-list{
 		flex-direction: column;
@@ -354,4 +357,11 @@ section {
     #back-to-top.show {
         transform: translateX(-50%) translateY(0);
     }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+	outline: 3px solid var(--orange-hex);
+	outline-offset: 2px;
 }

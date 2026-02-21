@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	const isOpen = menu.classList.toggle("visible");
 
 	menuBtn.setAttribute("aria-expanded", isOpen);
+	menuBtn.setAttribute(
+		"aria-label",
+		isOpen ? "Close menu" : "Open menu"
+	);
 
 	menuIcon.src = isOpen
 		? "assets/xmark.svg"

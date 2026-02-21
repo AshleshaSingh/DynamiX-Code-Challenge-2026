@@ -29,11 +29,12 @@
 				type="button"
 				aria-controls="menu"
 				aria-expanded="false"
+				aria-label="Open menu"
 			>
-				<img src="assets/bars.svg" id="menu-icon" alt="" width="20" height="20">
+			<img src="assets/bars.svg" id="menu-icon" alt="" aria-hidden="true">
 			</button>
 
-			<nav id="menu" class="navigation">
+			<nav id="menu" class="navigation" aria-label="Primary">
 				<ul class="navigation-list">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">About</a></li>
@@ -94,6 +95,7 @@
 							name="name"
 							placeholder="Name"
 							required
+							autocomplete="name"
 						  >
 						</div>
 					  
@@ -105,6 +107,7 @@
 							name="email"
 							placeholder="Email"
 							required
+							autocomplete="email"
 						  >
 						</div>
 					  
@@ -116,7 +119,7 @@
 
 		<footer>
             <p>© 2025 - DynamiX</p>
-            <a href="#" id="back-to-top" aria-label="Back to top">
+            <a href="#" id="back-to-top" aria-label="Back to top" role="button">
                 <img src="assets/arrow-up.svg" alt="Back to top">
             </a>
         </footer>
