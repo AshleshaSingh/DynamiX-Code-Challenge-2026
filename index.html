@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Broken Page</title>
 		<link rel="stylesheet" href="styles.css">
-		<script src="script.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
@@ -24,9 +23,17 @@
 					/>
 				</picture>
 			</a>
-			<button id="menu-btn" class="menu-btn">Menu</button>
+			<button
+				id="menu-btn"
+				class="menu-btn"
+				type="button"
+				aria-controls="menu"
+				aria-expanded="false"
+			>
+				<img src="assets/bars.svg" id="menu-icon" alt="" width="20" height="20">
+			</button>
 
-			<nav id="menu" class="navigation" style="display: none;">
+			<nav id="menu" class="navigation">
 				<ul class="navigation-list">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">About</a></li>
@@ -76,5 +83,6 @@
 			<p>Copyright 2025 - DynamiX</p>
 			<a href="#" id="back-to-top">Back to Top</a>
 		</footer>
+		<script src="scripts.js"></script>
 	</body>
 </html>

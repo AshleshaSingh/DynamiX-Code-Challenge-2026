@@ -21,12 +21,31 @@ header {
 	justify-content: space-between;
 	padding: 20px;
 	border-radius: 0.5em;
-	background-color: orange;
+	background-color: var(--orange-hex);
 	box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.25);
 }
 
 .menu-btn {
 	order: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 68px;
+	height: 68px;
+
+	padding: 0;   
+	border: 0;
+	border-radius: 999px;
+
+	background: var(--white-hex);
+	cursor: pointer;
+}
+
+.menu-btn img {
+	width: 30px;
+	height: 39px;
+	display: block;
 }
 
 .navigation {
@@ -34,37 +53,35 @@ header {
 	margin-left: auto;
 	opacity: 0;
 	pointer-events: none;
-	transition:
-		opacity 300ms ease,
+	transition: 
+		opacity 300ms ease, 
 		transform 300ms ease;
-
-	@media screen and (max-width: 950px) {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: calc(100% - 20px);
-		transform: translate(0, -2em);
-	}
-
-	&.visible {
-		opacity: 1;
-		pointer-events: auto;
-
-		@media screen and (max-width: 950px) {
-			transform: translate(0, 0);
-		}
-	}
 }
+
+.navigation.visible {
+	opacity: 1;
+	pointer-events: auto;
+	}
+
+.navigation a {
+	color: var(--white-hex);
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: 0.3px;
+	transition: opacity 200ms ease;
+  }
+  
+  .navigation a:hover,
+  .navigation a:focus {
+	opacity: 0.85;
+  }
 
 .navigation-list {
 	display: flex;
-	gap: 1em;
+	gap: 24px;
 	justify-content: flex-end;
 	align-items: center;
-
-	@media screen and (max-width: 950px) {
-		flex-direction: column;
-	}
 }
 
 .btn {
@@ -77,8 +94,8 @@ header {
 
 	&:hover,
 	&:focus {
-		background-color: orange;
-		color: white;
+		background-color: var(--orange-hex);
+		color: var(--white-hex);
 	}
 }
 
@@ -130,10 +147,6 @@ ul {
 	list-style: none;
 }
 
-#menu {
-	padding: 10px;
-}
-
 footer {
 	padding: 20px;
 	border-radius: 0.5em;
@@ -179,4 +192,32 @@ section {
 	gap: 1em;
 	max-width: 500px;
 	margin: 0 auto;
+}
+
+@media screen and (max-width: 950px) {
+	.navigation {
+		position: absolute;
+		top: 100%;
+		transform: translate(0, -2em);
+		left: 0px;
+		right: 0px;
+		width: auto;
+		padding: 16px;
+		background-color: var(--orange-hex);
+		border-radius: 8px
+	}
+
+	.navigation.visible {
+		transform: translate(0, 0);
+	}
+	.navigation-list{
+		flex-direction: column;
+		gap: 34px;
+		align-items: center;
+		padding: 0 16px;
+	}
+	.navigation a {
+		font-size: 24px;
+		text-align: center;
+	}
 }

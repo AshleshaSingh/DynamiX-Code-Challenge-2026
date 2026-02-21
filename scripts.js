@@ -1,16 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
-	const menu = document.getElementById('menu');
-	const menuBtn = document.getElementById('menu-btn');
+	const menu = document.getElementById("menu");
+	const menuBtn = document.getElementById("menu-btn");
+	const menuIcon = document.getElementById("menu-icon");
 
 	function toggleMenu() {
-		if (menu.style.display === "none") {
-			menu.style.display = "block";
-		} else {
-			menu.style.display = "none";
-		}
+	const isOpen = menu.classList.toggle("visible");
+
+	menuBtn.setAttribute("aria-expanded", isOpen);
+
+	menuIcon.src = isOpen
+		? "assets/xmark.svg"
+		: "assets/bars.svg";
 	}
 
-	menu.addEventListener('click', toggleMenu);
+	menuBtn.addEventListener("click", toggleMenu);
 });
 
 document.getElementById('contact-form').addEventListener('submit', function (event) {
