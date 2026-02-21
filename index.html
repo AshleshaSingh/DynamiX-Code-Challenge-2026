@@ -55,7 +55,24 @@
 					</div>
 
 					<div class="column column-2">
-						<img src="assets/image@2x.jpg">
+						<picture>
+							<!-- Mobile image -->
+							<source
+							  srcset="assets/image-mobile.jpg"
+							  media="(max-width: 950px)"
+							/>
+						
+							<!-- Desktop image -->
+							<img
+							  src="assets/image.jpg"
+							  srcset="assets/image.jpg 1x, assets/image@2x.jpg 2x"
+							  alt="Example content image"
+							  width="1200"
+							  height="800"
+							  loading="lazy"
+							  decoding="async"
+							/>
+						  </picture>
 					</div>
 				</div>
 			</section>

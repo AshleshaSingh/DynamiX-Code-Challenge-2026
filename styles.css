@@ -132,6 +132,11 @@ header {
 	}
 }
 
+.column-2 img {
+	display: block;
+	border-radius: 24px;
+}
+
 button {
 	padding: 10px;
 	font-size: 18px;
